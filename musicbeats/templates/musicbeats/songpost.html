@@ -1,0 +1,28 @@
+{% extends 'musicbeats/basic.html' %}
+{% block title %} All Songs {% endblock %}
+
+{% block body %}
+<body style=" background-color:#ffe4e1;">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" style="padding-top: 3%;">
+            <img src="/media/{{song.image}}" alt="" height="500px" width="450px">
+        </div>
+        <div class="col-md-6">
+            <h2 style="padding-top: 6%; font-weight: 550; color: green;">Title: {{song.name}}</h2>
+            <h5 style="padding-top: 2%; font-weight: 550;">Category: {{song.tags}}</h5>
+            <h5 style="padding-top: 2%; font-weight: 550;">Movie: {{song.movie}}</h5>
+            <h5 style="padding-top: 2%; font-weight: 550;">Singer: {{song.singer}}</h5>
+            <h5 style="padding-top: 2%; font-weight: 550;">Credit: <a href="{{song.credit}}" target="blank_">Click here</a></h5>
+
+                <audio controls style="padding-top: 2%;">
+                    <source src="/media/{{song.song}}" type="audio/mp3">
+                </audio>
+
+            <a download href="/media/{{song.song}}" style="padding-left: 1%;"><button class="btn btn-outline-danger">Download Song</button></a>
+
+
+    </div>
+</div>
+</body>
+{% endblock %}
